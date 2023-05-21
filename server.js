@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import contactRouter from './routes/contactRoutes';
+import {contactRouter} from './routes/contactRoutes.js';
 
 dotenv.config();
 

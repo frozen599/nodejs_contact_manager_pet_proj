@@ -1,21 +1,21 @@
-import express, { Router } from 'express';
+import express from 'express';
 
-var router = express.Router();
+var contactRouter = express.Router();
 
-router.get('/', (req, res) => {
-    res.status(200).json({message: "Get all contacts"});    
+contactRouter.get('/', (req, res) => {
+    res.status(200).json({message: 'Get all contacts'});    
 })
 
-router.post('/', (req, res) => {
-    res.status(200).json({message: "Create contact"});
-}) 
-
-router.put('/:id', (req, res) => {
-    res.status(200).json({message: `Update contact for ${req.params.id}`});
+contactRouter.post('/', (req, res) => {
+    res.status(200).json({message: 'Create contact'});
 })
 
-router.delete('/:id', (req, res) => {
-    res.status(200).json({message: `Delete contact ${req.params.id}`});
+contactRouter.put('/:id', (req, res) => {
+    res.status(200).json({message: `Update contact #${req.params.id}`});
 })
 
-module.exports = router;
+contactRouter.delete('/:id', (req, res) => {
+    res.status(200).json({message: `Delete contact #${req.params.id}`});
+})
+
+export {contactRouter};
