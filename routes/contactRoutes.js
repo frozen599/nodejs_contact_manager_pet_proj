@@ -9,16 +9,15 @@ import {
     from '../controllers/contactController.js';
 
 
-var jsonParser = bodyParser.json();
 var contactRouter = express.Router();
 
 contactRouter.get('/', getContacts);
 
-contactRouter.post('/', jsonParser, createContact);
+contactRouter.post('/', createContact);
 
 contactRouter.get('/:id', getContact);
 
-contactRouter.put('/:id', jsonParser, updateContact);
+contactRouter.put('/:id', updateContact);
 
 contactRouter.delete('/:id', deleteContact);
 
