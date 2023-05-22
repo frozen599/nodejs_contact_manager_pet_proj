@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import { 
         getContacts,
         getContact, 
@@ -7,15 +8,17 @@ import {
         deleteContact } 
     from '../controllers/contactController.js';
 
+
+var jsonParser = bodyParser.json();
 var contactRouter = express.Router();
 
 contactRouter.get('/', getContacts);
 
-contactRouter.post('/', createContact);
+contactRouter.post('/', jsonParser, createContact);
 
 contactRouter.get('/:id', getContact);
 
-contactRouter.put('/:id', updateContact);
+contactRouter.put('/:id', jsonParser, updateContact);
 
 contactRouter.delete('/:id', deleteContact);
 

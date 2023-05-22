@@ -1,4 +1,4 @@
-import {BAD_REQUEST, UNAUTHORIZED, FORBIDDEN, NOT_FOUND,INTERNAL_SERVER_ERROR, } from '../constants.js'
+import {BAD_REQUEST, UNAUTHORIZED, FORBIDDEN, NOT_FOUND,INTERNAL_SERVER_ERROR} from '../constants.js'
 
 const errHandler = (err, req, res, next) => {
     const statusCode = res.statusCode ? res.statusCode: 500;
