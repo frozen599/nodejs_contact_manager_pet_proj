@@ -1,10 +1,12 @@
 import asyncHandler from 'express-async-handler';
+import Contact from '../models/contactModel.js'
 
 // @desc Get all contacts
 // @route GET /api/contacts
 // @access public
 const getContacts = asyncHandler( async (req, res) => {
-    res.status(200).json({message: 'Get all contacts'}); 
+    const contacts = await Contact.find()
+    res.status(200).json({contacts}); 
 });
 
 // @desc Get one contact
